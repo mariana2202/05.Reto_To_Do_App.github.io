@@ -1,0 +1,185 @@
+*{
+    margin:0px;
+    padding: 0px;
+    
+}
+
+body{
+    background: hsl(235, 21%, 11%);
+    background-image: url(images/bg-desktop-dark.jpg);
+    background-repeat: no-repeat;
+    width: 100%;
+    background-size: 100%, cover;
+    font-family: 'Josefin Sans', sans-serif; 
+}
+
+.max-w{
+    max-width: 600px;
+}
+
+.c1{
+    background: hsl(235, 21%, 11%);
+}
+
+li{
+    list-style: none;
+}
+
+.sombra{
+    width: 100%;
+    max-width: 576px;
+    box-shadow: 1px 150px 35px -10px hsla(235, 20%, 11%, 0.116);
+}
+
+a, .btn{
+    font-size: 1.3rem;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.tachado{
+    text-decoration: line-through;
+    color: hsl(234, 11%, 52%);
+}
+
+p{
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+h3{
+    font-size: 2rem;
+}
+
+.far{
+    font-size: 1.5rem;
+}
+
+.icono .fa-circle{
+    cursor: pointer;
+    color: hsl(234, 11%, 52%);
+}
+
+.btn{
+    background: none;
+}
+
+.check{
+    width: 1.5rem;
+    padding: 8px;
+    background: linear-gradient(hsl(192, 100%, 67%),hsl(280, 87%, 65%));
+    cursor: pointer;
+}
+
+h1{
+    font-size: 3rem;
+    color: hsl(0, 0%, 98%);
+    letter-spacing: 1.3rem;
+    font-weight: 600;
+}
+
+.c2{
+    width: 6%;
+    cursor: pointer;
+}
+
+.enter::placeholder{
+    font-size: 1.1rem;
+}
+
+.menu-input{
+    max-width: 100%;
+    background: hsl(235, 24%, 19%);
+    border-radius: 15px;
+    padding: 0.8rem 1.8rem;
+}
+
+.icono{
+    width: 8%;
+}
+
+.menu-input input{
+    width: 100%;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    background: none;
+    border: none;
+    outline: none;
+    color: hsl(234, 39%, 85%);
+}
+
+.menu-input input::placeholder{
+    color: hsl(234, 11%, 52%);
+}
+
+.list-group-item{
+    display: flex;
+    width: 100%;
+    height: 60px;
+    padding: 0.8rem 1.8rem;
+    border-bottom: 0.3px solid hsl(234, 39%, 85%);
+    background: hsl(235, 24%, 19%);
+    align-items: center;
+    cursor: pointer;
+}
+
+.list-group-item.active{
+    color: hsla(235, 32%, 92%, 0.671);
+    background: hsl(235, 24%, 19%);
+    border-top:  0.3px solid rgba(119, 122, 146, 0.342);
+    border-bottom: rgba(119, 122, 146, 0.342);
+    border-left: hsl(235, 24%, 19%);
+    border-right: hsl(235, 24%, 19%);
+}
+
+.list-group-item:hover p{
+    color: hsl(0, 0%, 100%);
+}
+
+.icono{
+    width: 6%;
+}
+
+.todo{
+    width: 80%;
+    padding-top: 0.8rem;
+}
+
+.parte-baja{
+    background: hsl(235, 24%, 19%);
+    color: hsl(234, 11%, 52%);
+    border-top:  0.3px solid rgba(119, 122, 146, 0.342);
+
+}
+
+.item-left{
+    font-size: 10px;
+}
+
+.clear:hover{
+    color: hsl(0, 0%, 98%);
+}
+
+.act, .comp{
+    color: hsl(234, 11%, 52%);
+    font-size: 15px;
+}
+
+.all{
+    font-size: 15px;
+}
+
+.options a:hover{
+    color: hsl(0, 0%, 98%);
+}
+
+footer{
+    color:hsl(0, 0%, 100%);
+    font-size: 12px;
+}
+
+.drag{
+    color: hsla(234, 39%, 85%, 0.651);
+}
