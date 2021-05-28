@@ -37,7 +37,36 @@ a, .btn{
     font-weight: 500;
 }
 
-.tachado{
+#cambio-sun{
+    cursor: pointer;
+}
+
+input[type="text"]{
+    background: transparent;
+    outline: none;
+    border: 0;
+    color: #fff;
+    width: 90%;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    background: transparent;
+    width: 23px;
+    height: 23px;
+    border-radius: 100%;
+    border: 1px solid hsl(233, 14%, 35%);
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked{
+    background-image: url(images/icon-check.svg), linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
+    background-position: center;
+    background-repeat: no-repeat;
+    border: 0;
+}
+
+input[type="checkbox"]:checked + p{
     text-decoration: line-through;
     color: hsl(234, 11%, 52%);
 }
@@ -52,13 +81,8 @@ h3{
     font-size: 2rem;
 }
 
-.far{
-    font-size: 1.5rem;
-}
-
-.icono .fa-circle{
-    cursor: pointer;
-    color: hsl(234, 11%, 52%);
+h6{
+    margin-bottom: 0%;
 }
 
 .btn{
@@ -86,6 +110,7 @@ h1{
 
 .enter::placeholder{
     font-size: 1.1rem;
+    width: 100%;
 }
 
 .menu-input{
@@ -95,19 +120,11 @@ h1{
     padding: 0.8rem 1.8rem;
 }
 
-.icono{
-    width: 8%;
-}
-
 .menu-input input{
-    width: 100%;
-    padding: 1rem 0;
     font-size: 1.5rem;
     font-weight: 500;
     background: none;
-    border: none;
     outline: none;
-    color: hsl(234, 39%, 85%);
 }
 
 .menu-input input::placeholder{
@@ -123,6 +140,10 @@ h1{
     background: hsl(235, 24%, 19%);
     align-items: center;
     cursor: pointer;
+}    
+
+#todo-list{
+    border-radius: 5px;
 }
 
 .list-group-item.active{
@@ -138,20 +159,14 @@ h1{
     color: hsl(0, 0%, 100%);
 }
 
-.icono{
-    width: 6%;
-}
-
 .todo{
     width: 80%;
-    padding-top: 0.8rem;
 }
 
 .parte-baja{
     background: hsl(235, 24%, 19%);
     color: hsl(234, 11%, 52%);
     border-top:  0.3px solid rgba(119, 122, 146, 0.342);
-
 }
 
 .item-left{
@@ -182,4 +197,34 @@ footer{
 
 .drag{
     color: hsla(234, 39%, 85%, 0.651);
+}
+
+.options2{
+    display: none;
+}
+
+@media only screen and (max-width: 700px){
+    body{
+        background: hsl(235, 21%, 11%);
+        background-image: url(images/bg-mobile-dark.jpg);
+        background-repeat: no-repeat;
+        width: 100%;
+        background-size: 100%, cover;
+        font-family: 'Josefin Sans', sans-serif; 
+    }
+
+    .max-w{
+        max-width: 600px;
+    }
+
+    .nav{
+        display: none;
+    }
+
+    .options2{
+        background: hsl(235, 24%, 19%);
+        color: hsl(234, 11%, 52%);
+        display: flex;
+        border-radius: 3px;
+    }
 }
