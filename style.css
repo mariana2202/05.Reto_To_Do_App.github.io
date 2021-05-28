@@ -59,6 +59,17 @@ input[type="checkbox"]{
     cursor: pointer;
 }
 
+input[type="checkbox"]:hover{
+    border-radius: 100%;; 
+    border: 1px solid transparent; 
+    background:linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%)) border-box; 
+-webkit-mask:
+     linear-gradient(#fff 0 0) padding-box, 
+     linear-gradient(#fff 0 0);
+    -webkit-mask-composite: destination-out;
+    mask-composite: exclude; 
+}
+
 input[type="checkbox"]:checked{
     background-image: url(images/icon-check.svg), linear-gradient(hsl(192, 100%, 67%), hsl(280, 87%, 65%));
     background-position: center;
@@ -69,6 +80,14 @@ input[type="checkbox"]:checked{
 input[type="checkbox"]:checked + p{
     text-decoration: line-through;
     color: hsl(234, 11%, 52%);
+}
+
+.cross:hover{
+    opacity: 100%;
+}
+
+.cross{
+    opacity: 0%;
 }
 
 p{
@@ -203,7 +222,7 @@ footer{
     display: none;
 }
 
-@media only screen and (max-width: 700px){
+@media only screen and (max-width: 576px){
     body{
         background: hsl(235, 21%, 11%);
         background-image: url(images/bg-mobile-dark.jpg);
@@ -216,10 +235,7 @@ footer{
     .max-w{
         max-width: 600px;
     }
-    
-}
 
-@media only screen and (max-width: 600px){
     .nav{
         display: none;
     }
@@ -229,5 +245,9 @@ footer{
         color: hsl(234, 11%, 52%);
         display: flex;
         border-radius: 3px;
+    }
+
+    .cross{
+        opacity: 100%;
     }
 }
