@@ -11,7 +11,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap" rel="stylesheet"/>
   <title>Frontend Mentor | ToDo App</title>
 </head>
-<body><
+<body>
 
   <div class="wrapper">
     <div class="container c-2">
@@ -19,8 +19,8 @@
         <div class="col-12 mx-auto max-w">
           <div class="d-flex align-items-center justify-content-between mt-5">
             <h1 class="mt-4 mb-0 text-white">TODO</h1>
-            <div>
-              <img src="images/icon-sun.svg" alt="sun" class="img-fluid" id="cambio-sun">
+            <div id="cambio-sun">
+              <img src="images/icon-sun.svg" alt="sun" class="img-fluid">
             </div>
           </div>
           <div class="d-flex align-items-center rounded-lg menu-input mt-5 mb-4 p-3">
@@ -109,7 +109,8 @@
                   </div>
                 </div>
               </ul>
-              <div class="options2 d-flex align-items-center justify-content-center mt-3 py-2">
+              <div class="parte-baja-2 mt-3 py-2">
+                <div class="d-flex align-items-center justify-content-center">
                     <ul class="nav options2" id="">
                       <li class="nav-item">
                         <h6><a class="nav-link all" href="#">All</a></h6>
@@ -122,6 +123,7 @@
                       </li>
                     </ul>
                   </div>
+                </div>
             </div>
           </div> 
         </div>
@@ -132,12 +134,17 @@
     <div class="drag">
       <h6 class="mt-4">Drag and drop to reorder list</h6>
     </div>
-    <br><br>
+      <br><br>
     <div class="attribution text-center">
-    Challenge by Frontend Mentor.
-    <br>
-    Coded by Mariana Aristizábal Gutiérrez</a>.
-  </div>
+      Challenge by Frontend Mentor.
+      <br>
+      Coded by Mariana Aristizábal Gutiérrez</a>.
+      </div>
   </footer>
+
+
+  <!-- CÓDIGO JAVASCRIPT -->
+  <script src="script.js"></script>
+
 </body>
 </html>
