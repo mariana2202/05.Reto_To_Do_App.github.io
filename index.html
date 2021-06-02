@@ -25,11 +25,11 @@
           </div>
           <div class="d-flex align-items-center rounded-lg menu-input mt-5 mb-4 p-3">
             <input type="checkbox" name="" id="" class="ml-3"> 
-            <input type="text" class=" mb-0 ml-4 p-0 enter" name="" id="" placeholder="Create a new todo...">
+            <input type="text" class=" mb-0 ml-4 p-0 enter" name="" id="agregarTarea" placeholder="Create a new todo...">
           </div>
           <div id="" class="c1 rounded-lg">
             <div class="container p-0 m-0">
-              <ul class="list-group sombra" id="todo-list">
+              <ul class="list-group sombra todo-list" id="todo-list">
                 <li class="list-group-item d-flex justify-content-between align-items-center active">
                   <div class="todo d-flex align-items-center">
                     <input type="checkbox" name="" id=""> 
@@ -67,25 +67,8 @@
                     <img src="images/icon-cross.svg" alt="delete" class="img-fluid cross">
                   </div>
                 </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center active">
-                  <div class="todo d-flex align-items-center">
-                    <input type="checkbox" name="" id=""> 
-                    <p class="text mb-0 ml-4">Pick up groceries</p>
-                  </div>
-                  <div id="delete-todo">
-                    <img src="images/icon-cross.svg" alt="delete" class="img-fluid cross">
-                  </div>
-                </li>
-                <li class="list-group-item d-flex justify-content-between align-items-center active">
-                  <div class="todo d-flex align-items-center">
-                    <input type="checkbox" name="" id=""> 
-                    <p class="text mb-0 ml-4">Complete Todo App on frontend mentor</p>
-                  </div>
-                  <div id="">
-                    <img src="images/icon-cross.svg" alt="delete" class="img-fluid cross">
-                  </div>
-                </li>
-                <div class="container py-3 m-0 parte-baja">
+              </ul>
+              <div class="container py-3 m-0 parte-baja">
                   <div class="d-flex justify-content-between align-items-center order-1 ">
                     <div class="item-left">
                       <h6><span id="">5</span> items left</h6>
@@ -107,8 +90,7 @@
                       <h6>Clear Completed</h6>
                     </div>
                   </div>
-                </div>
-              </ul>
+              </div>
               <div class="parte-baja-2 mt-3 py-2">
                 <div class="d-flex align-items-center justify-content-center">
                     <ul class="nav options2" id="">

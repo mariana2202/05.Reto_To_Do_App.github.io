@@ -132,10 +132,16 @@ body.light input[type="checkbox"]:checked + p{
 
 .cross:hover{
     opacity: 100%;
+    background-image: url(images/icon-cross.svg);
+    width: 18px;
+    height: 18px;
 }
 
 .cross{
     opacity: 0%;
+    background-image: url(images/icon-cross.svg);
+    width: 18px;
+    height: 18px;
 }
 
 p{
