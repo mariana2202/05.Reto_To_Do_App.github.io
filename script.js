@@ -28,7 +28,7 @@ console.log();
 
 // Eventos
 inputTarea.addEventListener("keyup", insertTarea);
-
+contTareas.addEventListener("click", complete);
 
 
 // Funciones
@@ -38,7 +38,60 @@ function insertTarea(e){
     if(e.keyCode === 13){
     
         e.preventDefault();
-        console.log("Hola Mundo");
+
+        if(inputTarea.value != ""){
+        
+            // Creación li tareas añadidas
+            const addTarea = document.createElement("li");
+            addTarea.classList.add("list-group-item", "d-flex", "justify-content-between", "align-items-center", "active");
+            contTareas.appendChild(addTarea);
+
+                // Creación del div contenedor de texto
+                const divTarea = document.createElement("div");
+                divTarea.classList.add("todo", "d-flex", "align-items-center");
+                addTarea.appendChild(divTarea);
+
+                    // Creación del input contenedor de circulo
+                    const inputCheckbox = document.createElement("input");
+                    inputCheckbox.type = "checkbox";
+                    divTarea.appendChild(inputCheckbox);
+                    // console.log(inputCheckbox);
+
+                    // Creación del p contenedor de texto
+                    const textTarea = document.createElement("p");
+                    textTarea.classList.add("text", "mb-0", "ml-4");
+                    textTarea.textContent = inputTarea.value;
+                    divTarea.appendChild(textTarea);
+                    inputTarea.value = "";
+                
+                // Creación boton X
+                const btnX = document.createElement("div");
+                btnX.classList.add("cross");
+                addTarea.appendChild(btnX);
+        
+        }        
+    
+    }
+
+}
+
+function complete(e){
+    
+    // Elimina el card al dar click en X
+    if(e.target.classList.contains("cross")){
+        
+        e.target.parentElement.remove();
+
+    }
+
+    // Añade clase cuando la tarea se complete
+    if(e.target.checked == true){
+        
+        e.target.parentElement.parentElement.classList.add("tarea-completada");
+
+    }else{
+
+        e.target.parentElement.parentElement.classList.remove("tarea-completada");
 
     }
 
@@ -63,6 +116,3 @@ console.log(contTareas.firstElementChild.previousElementSibling.previousElementS
 // console.log(nuevoEnlace);
 // contTareas.appendChild(nuevoEnlace);
 // contTareas.insertBefore(nuevoEnlace, contTareas.children[0]);
-
-
-

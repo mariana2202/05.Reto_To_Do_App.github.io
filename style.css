@@ -130,15 +130,15 @@ body.light input[type="checkbox"]:checked + p{
     color:  hsl(236, 9%, 61%);
 }
 
-.cross:hover{
-    opacity: 100%;
+.cross{
+    opacity: 0%;
     background-image: url(images/icon-cross.svg);
     width: 18px;
     height: 18px;
 }
 
-.cross{
-    opacity: 0%;
+.list-group-item:hover .cross{
+    opacity: 100%;
     background-image: url(images/icon-cross.svg);
     width: 18px;
     height: 18px;
