@@ -28,8 +28,8 @@
             <input type="text" class=" mb-0 ml-4 p-0 enter" name="" id="agregarTarea" placeholder="Create a new todo...">
           </div>
           <div id="" class="c1 rounded-lg">
-            <div class="container p-0 m-0">
-              <ul class="list-group sombra todo-list" id="todo-list">
+            <div class="container p-0 m-0 sombra">
+              <ul class="list-group  todo-list" id="todo-list">
                 <li class="list-group-item d-flex justify-content-between align-items-center active">
                   <div class="todo d-flex align-items-center">
                     <input type="checkbox" name="" id=""> 
@@ -62,43 +62,49 @@
               <div class="container py-3 m-0 parte-baja">
                   <div class="d-flex justify-content-between align-items-center order-1 ">
                     <div class="item-left">
-                      <h6><span id="">5</span> items left</h6>
+                      <h6><span id="n-items">5</span> items left</h6>
                     </div>
                     <div class="options d-flex align-items-center justify-content-center order-2">
-                      <ul class="nav" id="">
-                        <li class="nav-item">
-                          <h6><a class="nav-link all" href="#">All</a></h6>
+                      <p id="all" class="nav-link all add-color nav">All</p>
+                      <p id="active" class="nav-link act nav">Active</p>
+                      <p id="completed" class="nav-link comp nav">Completed</p>
+                      <!-- <ul class="nav options" id="">
+                        <li class="nav-item add-color">
+                          <h6><a id="all" class="nav-link all" href="#">All</a></h6>
                         </li>
                         <li class="nav-item">
-                          <h6><a class="nav-link act" href="#">Active</a></h6>
+                          <h6><a id="active" class="nav-link act" href="#">Active</a></h6>
                         </li>
                         <li class="nav-item">
-                          <h6><a class="nav-link comp" href="#">Completed</a></h6>
+                          <h6><a id="completed" class="nav-link comp" href="#">Completed</a></h6>
                         </li>
-                      </ul>
+                      </ul> -->
                     </div>
                     <div class="clear d-flex align-items-center justify-content-center order-3">
                       <h6>Clear Completed</h6>
                     </div>
                   </div>
               </div>
-              <div class="parte-baja-2 mt-3 py-2">
-                <div class="d-flex align-items-center justify-content-center">
-                    <ul class="nav options2" id="">
-                      <li class="nav-item">
-                        <h6><a class="nav-link all" href="#">All</a></h6>
-                      </li>
-                      <li class="nav-item">
-                        <h6><a class="nav-link act" href="#">Active</a></h6>
-                      </li>
-                      <li class="nav-item">
-                        <h6><a class="nav-link comp" href="#">Completed</a></h6>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
             </div>
           </div> 
+          <div class="parte-baja-2 mt-3 py-2 justify-content-center">
+            <div class="options2 options d-flex align-items-center justify-content-center">
+              <p id="all" class="nav-link all options2 add-color">All</p>
+              <p id="active" class="nav-link act options2">Active</p>
+              <p id="completed" class="nav-link comp options2">Completed</p>
+                <!-- <ul class="nav options2 options" id="">
+                  <li class="nav-item add-color">
+                    <h6><a id="all" class="nav-link all" href="#">All</a></h6>
+                  </li>
+                  <li class="nav-item">
+                    <h6><a id="active" class="nav-link act" href="#">Active</a></h6>
+                  </li>
+                  <li class="nav-item">
+                    <h6><a id="completed" class="nav-link comp" href="#">Completed</a></h6>
+                  </li>
+                </ul> -->
+            </div>
+          </div>
         </div>
       </div>
     </div>

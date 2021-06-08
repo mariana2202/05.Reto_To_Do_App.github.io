@@ -147,7 +147,7 @@ body.light input[type="checkbox"]:checked + p{
 p{
     font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 15px;
+    margin-bottom: 0;
 }
 
 h3{
@@ -287,6 +287,8 @@ body.light .list-group-item:hover p{
 body.light .parte-baja{
     background: hsl(0, 0%, 98%);
     color: hsl(236, 9%, 61%);
+    border-bottom:  0.3px solid rgba(119, 122, 146, 0.342);
+    box-shadow: rgba(119, 122, 146, 0.342);
 }
 
 .item-left{
@@ -302,13 +304,14 @@ body.light .clear:hover{
     color: hsl(235, 19%, 35%);
 }
 
-.act, .comp{
+.all, .act, .comp{
     color: hsl(234, 11%, 52%);
     font-size: 15px;
+    cursor: pointer;
 }
 
-.all{
-    font-size: 15px;
+.add-color{
+    color: rgb(16, 87, 240);
 }
 
 .options a:hover{
@@ -340,7 +343,15 @@ body.light .drag{
     color: hsl(236, 9%, 61%);
 }
 
+.options{
+    display: flex;
+}
+
 .options2{
+    display: none;
+}
+
+.parte-baja-2{
     display: none;
 }
 
@@ -374,13 +385,15 @@ body.light .drag{
         background: hsl(235, 24%, 19%);
         color: hsl(0, 0%, 98%);        
         border-radius: 3px;
+        display: flex;
     }
 
     /* Light */
     body.light .parte-baja-2{
         background: hsl(0, 0%, 98%);
         color: hsl(236, 9%, 61%);
-        box-shadow: 2px 2px 10px 2px hsla(235, 20%, 11%, 0.116);;
+        border-radius: 3px;
+        box-shadow: 2px 2px 10px 2px hsla(235, 20%, 11%, 0.116);
     }
 
     .options2 a:hover{
@@ -394,16 +407,14 @@ body.light .drag{
 
     .options2{
         background: hsl(235, 24%, 19%);
-        color: hsl(234, 11%, 52%);
         display: flex;
         border-radius: 3px;
-        color: hsl(0, 0%, 98%);
     }
 
     /* Light */
     body.light .options2{
         background: hsl(0, 0%, 98%);
-        color: hsl(234, 11%, 52%);
+        /* color: hsl(234, 11%, 52%); */
         display: flex;
         border-radius: 3px;
     }

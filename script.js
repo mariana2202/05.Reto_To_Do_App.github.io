@@ -15,20 +15,26 @@ btnCambio.addEventListener("click", function(){
 });
 
 
-
-// Añadir Tarea a la lista
-
 // Variables
+
 const inputTarea = document.querySelector("#agregarTarea");
 const contTareas = document.querySelector("#todo-list");
 const addTarea = document.querySelector(".list-group-item");
 
-console.log();
+// Actualiza el número de tareas restantes
+const itemsLeft = document.querySelector("#n-items");
+itemsLeft.textContent = printItemsLeft();
 
+const filtro = document.querySelectorAll(".options")[0];
+const filtroCel = document.querySelectorAll(".options")[1];
+const clearTarea = document.querySelector(".clear");
 
 // Eventos
 inputTarea.addEventListener("keyup", insertTarea);
 contTareas.addEventListener("click", complete);
+filtro.addEventListener("click", filtrarTareas);
+filtroCel.addEventListener("click", filtrarTareas);
+clearTarea.addEventListener("click", clearItems)
 
 
 // Funciones
@@ -68,6 +74,8 @@ function insertTarea(e){
                 const btnX = document.createElement("div");
                 btnX.classList.add("cross");
                 addTarea.appendChild(btnX);
+
+                itemsLeft.textContent = printElementsLeft();
         
         }        
     
@@ -78,41 +86,120 @@ function insertTarea(e){
 function complete(e){
     
     // Elimina el card al dar click en X
-    if(e.target.classList.contains("cross")){
-        
+    if(e.target.classList.contains("cross")){    
         e.target.parentElement.remove();
-
-    }
-
-    // Añade clase cuando la tarea se complete
-    if(e.target.checked == true){
-        
-        e.target.parentElement.parentElement.classList.add("tarea-completada");
-
+        itemsLeft.textContent = printItemsLeft();
     }else{
-
-        e.target.parentElement.parentElement.classList.remove("tarea-completada");
-
+        // Añade clase cuando la tarea se complete
+        if(e.target.checked == true){  
+            e.target.parentElement.parentElement.classList.add("tarea-completada");
+            itemsLeft.textContent = printItemsLeft();
+        }else{
+            e.target.parentElement.parentElement.classList.remove("tarea-completada");
+            itemsLeft.textContent = printItemsLeft();
+        }
     }
+
+}
+
+function filtrarTareas(e){
+
+    const tarea = Array.from(contTareas.children);
+
+    tarea.forEach(function(tareaTarjeta){
+
+        if(e.target.id == "all"){
+            tareaTarjeta.classList.add("d-flex");
+
+            // // Estilo de Focus
+            e.target.classList.add("add-color");
+            e.target.nextElementSibling.classList.remove("add-color");
+            e.target.nextElementSibling.nextElementSibling.classList.remove("add-color");
+
+        }else if(e.target.id == "active"){
+
+            if(tareaTarjeta.classList.contains("tarea-completada")){
+                tareaTarjeta.classList.add("d-none");
+                tareaTarjeta.classList.remove("d-flex");
+            }else{
+                tareaTarjeta.classList.add("d-flex");
+                tareaTarjeta.classList.remove("d-none");
+            }
+
+            // Estilo de Focus
+            e.target.classList.add("add-color");
+            e.target.previousElementSibling.classList.remove("add-color");
+            e.target.nextElementSibling.classList.remove("add-color");
+            
+        }else if(e.target.id == "completed"){
+
+            if(tareaTarjeta.classList.contains("tarea-completada")){
+                tareaTarjeta.classList.add("d-flex");
+                tareaTarjeta.classList.remove("d-none");
+            }else{
+                tareaTarjeta.classList.add("d-none");
+                tareaTarjeta.classList.remove("d-flex");
+            }
+
+            // Estilo de Focus
+            e.target.classList.add("add-color");
+            e.target.previousElementSibling.classList.remove("add-color");
+            e.target.previousElementSibling.previousElementSibling.classList.remove("add-color");
+
+        }
+
+    })
+
+}
+
+function clearItems(e){
+    const tareas = Array.from(contTareas.children);
+    // console.log(tareas);
+
+    let arrayCompleted = tareas.filter(function(tareaTarjeta){
+        if(tareaTarjeta.classList.contains("tarea-completada")){
+            return tareaTarjeta;
+        }
+    });
+
+    arrayCompleted.forEach(function(element, i){
+        arrayCompleted[i].remove();
+    });
+
+}
+
+function printItemsLeft(){
+
+    const tareas = Array.from(contTareas.children);
+    // console.log(tareas);
+
+    let toDoCompleted = tareas.filter(function(tareaTarjeta){
+        if(!tareaTarjeta.classList.contains("tarea-completada")){
+            return tareaTarjeta;
+        }
+    });
+
+    return toDoCompleted.length;
 
 }
 
 
 
 
+// Recorrido por el DOM
 
-// contTareas.children[1].children[0].children[1].textContent = "Estudiar JavaScript";
-// contTareas.children[1].remove();
-/*console.log(contTareas.firstElementChild);
+/*contTareas.children[1].children[0].children[1].textContent = "Estudiar JavaScript";
+contTareas.children[1].remove();
+console.log(contTareas.firstElementChild);
 console.log(contTareas.lastElementChild);
 console.log(contTareas.firstElementChild.nextElementSibling.nextElementSibling);
-console.log(contTareas.firstElementChild.previousElementSibling.previousElementSibling);*/
-// console.log(contTareas.parentElement.parentElement);
-// console.log(contTareas.children[0].children[1]);
-// const nuevoEnlace = document.createElement("a");
-// nuevoEnlace.href = "http://www.jango.com";
-// nuevoEnlace.textContent = "Escucha Radio Online";
-// nuevoEnlace.classLists.add("link");
-// console.log(nuevoEnlace);
-// contTareas.appendChild(nuevoEnlace);
-// contTareas.insertBefore(nuevoEnlace, contTareas.children[0]);
+console.log(contTareas.firstElementChild.previousElementSibling.previousElementSibling);
+console.log(contTareas.parentElement.parentElement);
+console.log(contTareas.children[0].children[1]);
+const nuevoEnlace = document.createElement("a");
+nuevoEnlace.href = "http://www.jango.com";
+nuevoEnlace.textContent = "Escucha Radio Online";
+nuevoEnlace.classLists.add("link");
+console.log(nuevoEnlace);
+contTareas.appendChild(nuevoEnlace);
+contTareas.insertBefore(nuevoEnlace, contTareas.children[0]);*/
