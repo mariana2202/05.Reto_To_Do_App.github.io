@@ -31,10 +31,11 @@ const clearTarea = document.querySelector(".clear");
 
 // Eventos
 inputTarea.addEventListener("keyup", insertTarea);
+
 contTareas.addEventListener("click", complete);
 filtro.addEventListener("click", filtrarTareas);
 filtroCel.addEventListener("click", filtrarTareas);
-clearTarea.addEventListener("click", clearItems)
+clearTarea.addEventListener("click", clearItems);
 
 
 // Funciones
@@ -75,7 +76,7 @@ function insertTarea(e){
                 btnX.classList.add("cross");
                 addTarea.appendChild(btnX);
 
-                itemsLeft.textContent = printElementsLeft();
+                itemsLeft.textContent = printItemsLeft();
         
         }        
     
@@ -89,6 +90,7 @@ function complete(e){
     if(e.target.classList.contains("cross")){    
         e.target.parentElement.remove();
         itemsLeft.textContent = printItemsLeft();
+        console.log();
     }else{
         // Añade clase cuando la tarea se complete
         if(e.target.checked == true){  
@@ -171,7 +173,7 @@ function clearItems(e){
 function printItemsLeft(){
 
     const tareas = Array.from(contTareas.children);
-    // console.log(tareas);
+    console.log(tareas);
 
     let toDoCompleted = tareas.filter(function(tareaTarjeta){
         if(!tareaTarjeta.classList.contains("tarea-completada")){
